@@ -1,0 +1,29 @@
+#pragma once
+#include <lcscs/testing/tester.hpp>
+
+namespace lcscs { namespace testing {
+
+struct contracts {
+   static std::vector<uint8_t> system_wasm() { return read_wasm("${CMAKE_BINARY_DIR}/../contracts/lcscs.system/lcscs.system.wasm"); }
+   static std::vector<char>    system_abi() { return read_abi("${CMAKE_BINARY_DIR}/../contracts/lcscs.system/lcscs.system.abi"); }
+   static std::vector<uint8_t> token_wasm() { return read_wasm("${CMAKE_BINARY_DIR}/../contracts/lcscs.token/lcscs.token.wasm"); }
+   static std::vector<char>    token_abi() { return read_abi("${CMAKE_BINARY_DIR}/../contracts/lcscs.token/lcscs.token.abi"); }
+   static std::vector<uint8_t> msig_wasm() { return read_wasm("${CMAKE_BINARY_DIR}/../contracts/lcscs.msig/lcscs.msig.wasm"); }
+   static std::vector<char>    msig_abi() { return read_abi("${CMAKE_BINARY_DIR}/../contracts/lcscs.msig/lcscs.msig.abi"); }
+   static std::vector<uint8_t> wrap_wasm() { return read_wasm("${CMAKE_BINARY_DIR}/../contracts/lcscs.wrap/lcscs.wrap.wasm"); }
+   static std::vector<char>    wrap_abi() { return read_abi("${CMAKE_BINARY_DIR}/../contracts/lcscs.wrap/lcscs.wrap.abi"); }
+   static std::vector<uint8_t> bios_wasm() { return read_wasm("${CMAKE_BINARY_DIR}/../contracts/lcscs.bios/lcscs.bios.wasm"); }
+   static std::vector<char>    bios_abi() { return read_abi("${CMAKE_BINARY_DIR}/../contracts/lcscs.bios/lcscs.bios.abi"); }
+
+   struct util {
+      static std::vector<uint8_t> reject_all_wasm() { return read_wasm("${CMAKE_SOURCE_DIR}/test_contracts/reject_all.wasm"); }
+      static std::vector<uint8_t> exchange_wasm() { return read_wasm("${CMAKE_SOURCE_DIR}/test_contracts/exchange.wasm"); }
+      static std::vector<uint8_t> system_wasm_v1_8() { return read_wasm("${CMAKE_SOURCE_DIR}/test_contracts/old_versions/v1.8.3/lcscs.system/lcscs.system.wasm"); }
+      static std::vector<char>    system_abi_v1_8() { return read_abi("${CMAKE_SOURCE_DIR}/test_contracts/old_versions/v1.8.3/lcscs.system/lcscs.system.abi"); }
+      static std::vector<uint8_t> system_wasm_old() { return read_wasm("${CMAKE_SOURCE_DIR}/test_contracts/old_versions/v1.2.1/lcscs.system/lcscs.system.wasm"); }
+      static std::vector<char>    system_abi_old() { return read_abi("${CMAKE_SOURCE_DIR}/test_contracts/old_versions/v1.2.1/lcscs.system/lcscs.system.abi"); }
+      static std::vector<uint8_t> msig_wasm_old() { return read_wasm("${CMAKE_SOURCE_DIR}/test_contracts/old_versions/v1.2.1/lcscs.msig/lcscs.msig.wasm"); }
+      static std::vector<char>    msig_abi_old() { return read_abi("${CMAKE_SOURCE_DIR}/test_contracts/old_versions/v1.2.1/lcscs.msig/lcscs.msig.abi"); }
+   };
+};
+}} //ns lcscs::testing

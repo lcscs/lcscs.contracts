@@ -1,0 +1,40 @@
+{
+  "name": "lcscs.contracts",
+  "generators": [
+    {
+      "name": "collate_markdown",
+      "options": {
+        "docs_dir": "docs"
+      }
+    },
+    {
+      "name": "mdjavadoc",
+      "options": {
+        "source_dirs": [
+          "contracts/lcscs.token/include/lcscs.token/",
+          "contracts/lcscs.wrap/include/lcscs.wrap/",
+          "contracts/lcscs.bios/include/lcscs.bios/",
+          "contracts/lcscs.system/include/lcscs.system/",
+          "contracts/lcscs.msig/include/lcscs.msig/"
+        ],
+        "output_dir": "action-reference"
+      }
+    }
+  ],
+  "skip_default_filters": true,
+  "filters": [
+    {
+      "name": "sanitize",
+      "options": {
+        "exclude": ["action-reference"]
+      }
+    },
+    {
+      "name": "capitalize",
+      "options": {
+        "mode": "all",
+        "exclude": ["action-reference"]
+      }
+    }
+  ]
+}
